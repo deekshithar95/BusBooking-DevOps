@@ -1,8 +1,25 @@
-node_modules/
+@"
+# Node.js dependencies
+**/node_modules/
+
+# Environment variables and secrets
 .env
 .env.*
 !.env.example
+
+# Build files
+**/dist/
+**/build/
+**/coverage/
+
+# Logs
+*.log
+
+# AWS keys
 *.pem
-terraform/.terraform/
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
+
+# Terraform
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.*
+"@ | Out-File -Encoding utf8 .gitignore
