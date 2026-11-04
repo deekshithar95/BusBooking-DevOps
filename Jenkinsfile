@@ -1,6 +1,11 @@
-
 pipeline {
     agent any
+
+    environment {
+        DB_PASSWORD = credentials('db-password')
+        JWT_SECRET = credentials('jwt-secret')
+        MYSQL_ROOT_PASSWORD = credentials('mysql-root-password')
+    }
 
     stages {
         stage('Checkout') {
